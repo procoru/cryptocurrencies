@@ -21,7 +21,9 @@
   },
   "scripts": {
     "test": "xo && ava",
-    "build": "rm -rf images && mkdir images && node build.js"
+    "build": "rm -rf images && mkdir images && node build.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "files": [
     "cryptocurrencies.json",
@@ -34,7 +36,9 @@
     "cryptocurrencies",
     "cryptocurrency"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "snyk": "^1.316.1"
+  },
   "devDependencies": {
     "ava": "^0.15.2",
     "chalk": "^2.3.0",
@@ -46,5 +50,6 @@
   },
   "xo": {
     "esnext": true
-  }
+  },
+  "snyk": true
 }
